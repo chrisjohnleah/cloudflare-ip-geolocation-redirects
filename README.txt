@@ -1,6 +1,6 @@
 === Cloudflare IP Geolocation Redirects ===
 Contributors: chrisjohnleah
-Donate link: https://codebychris.co.uk/about
+Donate link: https://codebychris.co.uk/donate
 Tags: redirects, cloudflare, geolocation
 Requires at least: 3.0.1
 Tested up to: 5.0
