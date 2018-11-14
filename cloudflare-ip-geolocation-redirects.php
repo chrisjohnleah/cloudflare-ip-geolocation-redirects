@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Cloudflare IP Geolocation Redirects
  * Plugin URI:        https://codebychris.co.uk/work/plugins/cloudflare-ip-geolocation-redirects
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Redirect visitors based Cloudflares IP Geolocation feature
  * Version:           1.0.0
  * Author:            Christopher Leah
  * Author URI:        https://codebychris.co.uk/about
