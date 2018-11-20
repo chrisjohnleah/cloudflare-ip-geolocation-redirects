@@ -2,3 +2,24 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+/* Hide Vue directives before Vue fully loaded */
+[v-cloak] {
+    display: none;
+}
+
+.settings_page_cloudflare-ip-geolocation-redirects tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+.form-group.has-error input {
+    border: 1px solid #dc3232;
+}
+
+.form-group input:focus {
+    border: 1px solid #00a0d2;
+}
+
+p.text-danger {
+    color: #dc3232;
+}
