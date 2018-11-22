@@ -133,4 +133,17 @@ class Cloudflare_Ip_Geolocation_Redirects_Admin {
 		include_once 'partials/cloudflare-ip-geolocation-redirects-admin-display.php';
 	}
 
+	/**
+	 * Save new and update previous option settings
+	 *
+	 * @since  1.0.0
+	 */
+	public function save_changes() {
+
+		wp_send_json("testing ajax received");
+		die();
+	}
+
+
+
 }

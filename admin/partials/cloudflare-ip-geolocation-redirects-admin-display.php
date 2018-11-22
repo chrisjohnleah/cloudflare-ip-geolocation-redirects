@@ -48,7 +48,7 @@
                                             <div class="form-group"
                                                  :class="{'has-error': errors.has('countrySelect-' + index)}">
                                             <select v-bind:name="`countrySelect-${index}`"
-                                                    v-model="input.countryCodeSelected" v-validate="'required'">
+                                                    v-model="input.countryCodeSelected" v-validate.initial="'required'">
                                                 <option v-for="countryCodeOption in countryCodeOptions"
                                                         v-bind:value="countryCodeOption.value">
                                                     {{ countryCodeOption.label }}
@@ -67,7 +67,7 @@
                                                  :class="{'has-error': errors.has('inputDestUrl-' + index)}">
 
                                                 <input type="url" v-model="input.destURL"
-                                                       v-bind:name="`inputDestUrl-${index}`" v-validate="'required|url'"
+                                                       v-bind:name="`inputDestUrl-${index}`" v-validate.initial="'required|url'"
                                                        class="large-text"/>
                                                 <p class="text-danger" v-show="errors.has('inputDestUrl-' + index)">{{
                                                     errors.first('inputDestUrl-' + index) }}</p>
@@ -87,8 +87,9 @@
                                     </tr>
                                     </tfoot>
                                 </table>
-								<?php submit_button( $text = null, $type = 'button-primary alignright', $name = 'save', $wrap = true,
-									$other_attributes = null ); ?><br>
+                                <p class="textright">
+                                    <button @click="saveChanges()" class="button-primary">Save Changes</button>
+                                </p>
                             </div>
                             <!-- .inside -->
 
