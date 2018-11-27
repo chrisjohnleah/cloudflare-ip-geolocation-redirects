@@ -48,7 +48,7 @@
                                             <div class="form-group"
                                                  :class="{'has-error': errors.has('countrySelect-' + index)}">
                                             <select v-bind:name="`countrySelect-${index}`"
-                                                    v-model="input.countryCodeSelected" v-validate.initial="'required'">
+                                                    v-model="input.countryCodeSelected" v-validate.initial="'required'" class="country-select">
                                                 <option v-for="countryCodeOption in countryCodeOptions"
                                                         v-bind:value="countryCodeOption.value">
                                                     {{ countryCodeOption.label }}
@@ -68,7 +68,7 @@
 
                                                 <input type="url" v-model="input.destURL"
                                                        v-bind:name="`inputDestUrl-${index}`" v-validate.initial="'required|url'"
-                                                       class="large-text"/>
+                                                       class="large-text dest-url"/>
                                                 <p class="text-danger" v-show="errors.has('inputDestUrl-' + index)">{{
                                                     errors.first('inputDestUrl-' + index) }}</p>
                                             </div>

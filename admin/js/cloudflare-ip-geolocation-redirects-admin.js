@@ -279,6 +279,23 @@ var app = new Vue({
             this.inputs.splice(index, 1)
         },
         saveChanges() {
+            let countryData = getValues( '.country-select');
+            console.log(countryData);
+            let destUrlData = getValues( '.dest-url');
+            console.log(destUrlData);
+            let urlEncodedData = "";
+            let urlEncodedDataPairs = [];
+            let name;
+
+            // Turn the data object into an array of URL-encoded key/value pairs.
+            for(name in data) {
+                urlEncodedDataPairs.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+            }
+
+            // Combine the pairs into a single string and replace all %-encoded spaces to
+            // the '+' character; matches the behaviour of browser form submissions.
+            urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+
             fetch(ajaxurl, {
                 method: 'POST',
                 credentials: 'same-origin',
@@ -292,3 +309,8 @@ var app = new Vue({
         }
     }
 })
+
+function getValues(selector) {
+    var els = document.querySelectorAll(selector);
+    return [].map.call(els, el => el.value);
+}

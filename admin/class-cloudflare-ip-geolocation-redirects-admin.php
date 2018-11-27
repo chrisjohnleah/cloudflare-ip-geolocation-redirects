@@ -138,9 +138,18 @@ class Cloudflare_Ip_Geolocation_Redirects_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function save_changes() {
+	public function save_changes($redirects) {
 
-		wp_send_json("testing ajax received");
+		// array of options
+		$data_r = ['title' => 'hello world!', 1, false];
+		// add a new option
+		add_option('wporg_custom_option', $data_r);
+		// get an option
+		$options_r = get_option('wporg_custom_option');
+		// output the title
+		//echo esc_html($options_r['title']);
+
+		wp_send_json($options_r['title']);
 		die();
 	}
 
